@@ -48,3 +48,53 @@
 - Learnt a number of VSCode shortcuts
 - Build a safety net when refactoring by duplicating lines if that would help in having a clear idea.
 - Once solution is submitted, check the community solutions - at least 3 of them.
+- Make a copy of any community solutions that you find interesting or educational by adding them as function redefinition by assigning the new function declaration to the function name `xyz = function xyz() {..}`
+
+## Intro to Git
+
+- version control - commit = Take a snapshot of a folder at a given point in time.
+- to tell git to manage a folder, go inside that folder and `git init`
+- understand the following ideas
+  - working directory, index and object database
+  - branch is a moving pointer to a commit
+  - tag is a fixed pointer to a commit
+  - a remote-tracking branch is created each time you set up a remote
+  - comparisons are run between your local branch and the remote-tracking branch
+  - if your remote-tracking branch is not updated frequently, you might face the situation that `git status` tells you everything is up-to-date, but the remote repo has newer commits than your local branch
+- git status and git log are your friends - use them to land on any new directory and before and after each commit
+  - git log --oneline will list all commits on a line
+
+## git development workflow
+
+- release work goes on the main/master branch
+- for each new issue, bug-fix, feature, create a new branch using `git branch xyz` and switch to it using `git switch/checkout xyz`
+- branch name should be like this `2-image-alignment-bug` -> start with
+- do the commits needed to implement in the branch with commit messages referencing the issue using `fix #2 - image alignment`
+- when you are ready to merge, first run `git pull & git merge master` to pull any latest work committed in GitHub.
+- switch to master/main using `git switch master/main`
+- now run `git merge branch-name` - ideally, this should be a fast-forward commit if you have the previous steps properly.
+- Once the work is merged, delete the branch using `git branch -d branch-name`
+
+## Practice Reps for Exercism
+
+- After you complete the exercise and reviewed community solutions, decide whether you want to practice this exercise
+  - if you find any aspect of the exercise difficult or unfamiliar, you should practice
+  - if you find any community solution interesting or educational, then you can practice them also
+- Switch to the Git repo for practice `exercism-js-reps`
+- Do git status and git log --oneline to check where you are
+- on Master branch
+  - create the spec.js and the code file by using the Test-Driven Development process I have shown to you
+    - do not take their spec as final.
+    - refer only to the problem description and write your test spec. Refer to their tests only if you are stuck
+    - Otherwise, finish your spec and the code and get all the tests to pass - then at the end you can compare it to their spec.
+  - when to commit
+    - each time you get a green test, commit
+    - each time you refactor, commit
+    - do NOT commit code that is NOT working.
+- on rep branches
+  - create a branch for each rep - rep1, rep2, etc.
+  - on day 1, try to reproduce the test and code using TDD on rep1 branch
+  - Once you complete, compare the master using `git diff master -- fileNames`
+  - on day 2, use rep2 branch
+- Do at least 3 practice reps for each problem - you can do more if you are not comfortable after 3 reps.
+- The more you exercise your brain to recall concepts, the better you would be proficient at coding fast using your muscle memory.
