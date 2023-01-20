@@ -8,7 +8,7 @@ describe('can execute fast attack', () => {
     expect(canExecuteFastAttack(knightIsAwake)).toBe(expected);
   });
 
-  xtest('when the knight is asleep', () => {
+  test('when the knight is asleep', () => {
     const knightIsAwake = false;
     const expected = true;
 
@@ -17,7 +17,7 @@ describe('can execute fast attack', () => {
 });
 
 describe('can spy', () => {
-  xtest('when everyone is asleep', () => {
+  test('when everyone is asleep', () => {
     const knightIsAwake = false;
     const archerIsAwake = false;
     const prisonerIsAwake = false;
@@ -26,7 +26,7 @@ describe('can spy', () => {
     expect(canSpy(knightIsAwake, archerIsAwake, prisonerIsAwake)).toBe(expected);
   });
 
-  xtest('when only the prisoner is awake', () => {
+  test('when only the prisoner is awake', () => {
     const knightIsAwake = false;
     const archerIsAwake = false;
     const prisonerIsAwake = true;
@@ -35,7 +35,7 @@ describe('can spy', () => {
     expect(canSpy(knightIsAwake, archerIsAwake, prisonerIsAwake)).toBe(expected);
   });
 
-  xtest('when only the archer is awake', () => {
+  test('when only the archer is awake', () => {
     const knightIsAwake = false;
     const archerIsAwake = true;
     const prisonerIsAwake = false;
@@ -44,7 +44,7 @@ describe('can spy', () => {
     expect(canSpy(knightIsAwake, archerIsAwake, prisonerIsAwake)).toBe(expected);
   });
 
-  xtest('when only the knight is asleep', () => {
+  test('when only the knight is asleep', () => {
     const knightIsAwake = false;
     const archerIsAwake = true;
     const prisonerIsAwake = true;
@@ -53,7 +53,7 @@ describe('can spy', () => {
     expect(canSpy(knightIsAwake, archerIsAwake, prisonerIsAwake)).toBe(expected);
   });
 
-  xtest('when only the knight is awake', () => {
+  test('when only the knight is awake', () => {
     const knightIsAwake = true;
     const archerIsAwake = false;
     const prisonerIsAwake = false;
@@ -62,7 +62,7 @@ describe('can spy', () => {
     expect(canSpy(knightIsAwake, archerIsAwake, prisonerIsAwake)).toBe(expected);
   });
 
-  xtest('when only the archer is asleep', () => {
+  test('when only the archer is asleep', () => {
     const knightIsAwake = true;
     const archerIsAwake = false;
     const prisonerIsAwake = true;
@@ -71,7 +71,7 @@ describe('can spy', () => {
     expect(canSpy(knightIsAwake, archerIsAwake, prisonerIsAwake)).toBe(expected);
   });
 
-  xtest('when everyone is awake', () => {
+  test('when everyone is awake', () => {
     const knightIsAwake = true;
     const archerIsAwake = true;
     const prisonerIsAwake = true;
@@ -82,7 +82,7 @@ describe('can spy', () => {
 });
 
 describe('can signal prisoner', () => {
-  xtest('when everyone is asleep', () => {
+  test('when everyone is asleep', () => {
     const archerIsAwake = false;
     const prisonerIsAwake = false;
     const expected = false;
@@ -90,7 +90,7 @@ describe('can signal prisoner', () => {
     expect(canSignalPrisoner(archerIsAwake, prisonerIsAwake)).toBe(expected);
   });
 
-  xtest('when only the prisoner is awake', () => {
+  test('when only the prisoner is awake', () => {
     const archerIsAwake = false;
     const prisonerIsAwake = true;
     const expected = true;
@@ -98,7 +98,7 @@ describe('can signal prisoner', () => {
     expect(canSignalPrisoner(archerIsAwake, prisonerIsAwake)).toBe(expected);
   });
 
-  xtest('when only the archer is awake', () => {
+  test('when only the archer is awake', () => {
     const archerIsAwake = true;
     const prisonerIsAwake = false;
     const expected = false;
@@ -106,7 +106,7 @@ describe('can signal prisoner', () => {
     expect(canSignalPrisoner(archerIsAwake, prisonerIsAwake)).toBe(expected);
   });
 
-  xtest('when everyone is awake', () => {
+  test('when everyone is awake', () => {
     const archerIsAwake = true;
     const prisonerIsAwake = true;
     const expected = false;
@@ -116,7 +116,7 @@ describe('can signal prisoner', () => {
 });
 
 describe('can free prisoner', () => {
-  xtest('when everyone is asleep and pet dog is not present', () => {
+  test('when everyone is asleep and pet dog is not present', () => {
     const knightIsAwake = false;
     const archerIsAwake = false;
     const prisonerIsAwake = false;
@@ -126,7 +126,7 @@ describe('can free prisoner', () => {
     expect(canFreePrisoner(knightIsAwake, archerIsAwake, prisonerIsAwake, petDogIsPresent)).toBe(expected);
   });
 
-  xtest('when everyone is asleep and pet dog is present', () => {
+  test('when everyone is asleep and pet dog is present', () => {
     const knightIsAwake = false;
     const archerIsAwake = false;
     const prisonerIsAwake = false;
@@ -136,7 +136,7 @@ describe('can free prisoner', () => {
     expect(canFreePrisoner(knightIsAwake, archerIsAwake, prisonerIsAwake, petDogIsPresent)).toBe(expected);
   });
 
-  xtest('when only the prisoner is awake and pet dog is not present', () => {
+  test('when only the prisoner is awake and pet dog is not present', () => {
     const knightIsAwake = false;
     const archerIsAwake = false;
     const prisonerIsAwake = true;
@@ -146,7 +146,7 @@ describe('can free prisoner', () => {
     expect(canFreePrisoner(knightIsAwake, archerIsAwake, prisonerIsAwake, petDogIsPresent)).toBe(expected);
   });
 
-  xtest('when only the prisoner is awake and pet dog is present', () => {
+  test('when only the prisoner is awake and pet dog is present', () => {
     const knightIsAwake = false;
     const archerIsAwake = false;
     const prisonerIsAwake = true;
@@ -156,7 +156,7 @@ describe('can free prisoner', () => {
     expect(canFreePrisoner(knightIsAwake, archerIsAwake, prisonerIsAwake, petDogIsPresent)).toBe(expected);
   });
 
-  xtest('when only the archer is awake and pet dog is not present', () => {
+  test('when only the archer is awake and pet dog is not present', () => {
     const knightIsAwake = false;
     const archerIsAwake = true;
     const prisonerIsAwake = false;
@@ -166,7 +166,7 @@ describe('can free prisoner', () => {
     expect(canFreePrisoner(knightIsAwake, archerIsAwake, prisonerIsAwake, petDogIsPresent)).toBe(expected);
   });
 
-  xtest('when only the archer is awake and pet dog is present', () => {
+  test('when only the archer is awake and pet dog is present', () => {
     const knightIsAwake = false;
     const archerIsAwake = true;
     const prisonerIsAwake = false;
@@ -176,7 +176,7 @@ describe('can free prisoner', () => {
     expect(canFreePrisoner(knightIsAwake, archerIsAwake, prisonerIsAwake, petDogIsPresent)).toBe(expected);
   });
 
-  xtest('when only the knight is asleep and pet dog is not present', () => {
+  test('when only the knight is asleep and pet dog is not present', () => {
     const knightIsAwake = false;
     const archerIsAwake = true;
     const prisonerIsAwake = true;
@@ -186,7 +186,7 @@ describe('can free prisoner', () => {
     expect(canFreePrisoner(knightIsAwake, archerIsAwake, prisonerIsAwake, petDogIsPresent)).toBe(expected);
   });
 
-  xtest('when only the knight is asleep and pet dog is present', () => {
+  test('when only the knight is asleep and pet dog is present', () => {
     const knightIsAwake = false;
     const archerIsAwake = true;
     const prisonerIsAwake = true;
@@ -196,7 +196,7 @@ describe('can free prisoner', () => {
     expect(canFreePrisoner(knightIsAwake, archerIsAwake, prisonerIsAwake, petDogIsPresent)).toBe(expected);
   });
 
-  xtest('when only the knight is awake and pet dog is not present', () => {
+  test('when only the knight is awake and pet dog is not present', () => {
     const knightIsAwake = true;
     const archerIsAwake = false;
     const prisonerIsAwake = false;
@@ -206,7 +206,7 @@ describe('can free prisoner', () => {
     expect(canFreePrisoner(knightIsAwake, archerIsAwake, prisonerIsAwake, petDogIsPresent)).toBe(expected);
   });
 
-  xtest('when only the knight is awake and pet dog is present', () => {
+  test('when only the knight is awake and pet dog is present', () => {
     const knightIsAwake = true;
     const archerIsAwake = false;
     const prisonerIsAwake = false;
@@ -216,7 +216,7 @@ describe('can free prisoner', () => {
     expect(canFreePrisoner(knightIsAwake, archerIsAwake, prisonerIsAwake, petDogIsPresent)).toBe(expected);
   });
 
-  xtest('when only the archer is asleep and pet dog is not present', () => {
+  test('when only the archer is asleep and pet dog is not present', () => {
     const knightIsAwake = true;
     const archerIsAwake = false;
     const prisonerIsAwake = true;
@@ -226,7 +226,7 @@ describe('can free prisoner', () => {
     expect(canFreePrisoner(knightIsAwake, archerIsAwake, prisonerIsAwake, petDogIsPresent)).toBe(expected);
   });
 
-  xtest('when only the archer is asleep and pet dog is present', () => {
+  test('when only the archer is asleep and pet dog is present', () => {
     const knightIsAwake = true;
     const archerIsAwake = false;
     const prisonerIsAwake = true;
@@ -236,7 +236,7 @@ describe('can free prisoner', () => {
     expect(canFreePrisoner(knightIsAwake, archerIsAwake, prisonerIsAwake, petDogIsPresent)).toBe(expected);
   });
 
-  xtest('when only the prisoner is asleep and pet dog is not present', () => {
+  test('when only the prisoner is asleep and pet dog is not present', () => {
     const knightIsAwake = true;
     const archerIsAwake = true;
     const prisonerIsAwake = false;
@@ -246,7 +246,7 @@ describe('can free prisoner', () => {
     expect(canFreePrisoner(knightIsAwake, archerIsAwake, prisonerIsAwake, petDogIsPresent)).toBe(expected);
   });
 
-  xtest('when only the prisoner is asleep and pet dog is present', () => {
+  test('when only the prisoner is asleep and pet dog is present', () => {
     const knightIsAwake = true;
     const archerIsAwake = true;
     const prisonerIsAwake = false;
@@ -256,7 +256,7 @@ describe('can free prisoner', () => {
     expect(canFreePrisoner(knightIsAwake, archerIsAwake, prisonerIsAwake, petDogIsPresent)).toBe(expected);
   });
 
-  xtest('when everyone is awake and pet dog is not present', () => {
+  test('when everyone is awake and pet dog is not present', () => {
     const knightIsAwake = true;
     const archerIsAwake = true;
     const prisonerIsAwake = true;
@@ -266,7 +266,7 @@ describe('can free prisoner', () => {
     expect(canFreePrisoner(knightIsAwake, archerIsAwake, prisonerIsAwake, petDogIsPresent)).toBe(expected);
   });
 
-  xtest('when everyone is awake and pet dog is present', () => {
+  test('when everyone is awake and pet dog is present', () => {
     const knightIsAwake = true;
     const archerIsAwake = true;
     const prisonerIsAwake = true;
