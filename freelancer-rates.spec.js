@@ -10,22 +10,22 @@ describe('day rate', () => {
     expect(actual).toBe(128);
   });
 
-  xtest('at 25/hour', () => {
+  test('at 25/hour', () => {
     const actual = dayRate(25);
     expect(actual).toBe(200);
   });
 
-  xtest('at 31.40/hour', () => {
+  test('at 31.40/hour', () => {
     const actual = dayRate(31.4);
     expect(actual).toBeCloseTo(251.2, DIFFERENCE_PRECISION_IN_DIGITS);
   });
 
-  xtest('at 89.89/hour', () => {
+  test('at 89.89/hour', () => {
     const actual = dayRate(89.89);
     expect(actual).toBeCloseTo(719.12, DIFFERENCE_PRECISION_IN_DIGITS);
   });
 
-  xtest('at 97.654321/hour', () => {
+  test('at 97.654321/hour', () => {
     const actual = dayRate(97.654321);
     expect(actual).toBeCloseTo(781.234568, DIFFERENCE_PRECISION_IN_DIGITS);
   });
@@ -33,14 +33,14 @@ describe('day rate', () => {
 
 describe('days in budget', () => {
   describe('with a budget of 1280', () => {
-    xtest('at 16/hour', () => {
+    test('at 16/hour', () => {
       const actual = daysInBudget(1280, 16);
       const expected = 10;
 
       expect(actual).toBeCloseTo(expected, DIFFERENCE_PRECISION_IN_DIGITS);
     });
 
-    xtest('at 25/hour', () => {
+    test('at 25/hour', () => {
       const actual = daysInBudget(1280, 25);
       const expected = 6;
 
@@ -48,7 +48,7 @@ describe('days in budget', () => {
     });
 
     describe('with a budget of 835', () => {
-      xtest('at 12/hour', () => {
+      test('at 12/hour', () => {
         const actual = daysInBudget(835, 12);
         const expected = 8;
 
@@ -60,26 +60,26 @@ describe('days in budget', () => {
 
 describe('cost with monthly discount', () => {
   describe('at 16/hour', () => {
-    xtest('for 70 days', () => {
+    test('for 70 days', () => {
       const actual = priceWithMonthlyDiscount(16, 70, 0);
       const expected = 8960;
       expect(actual).toBeCloseTo(expected, DIFFERENCE_PRECISION_IN_DIGITS);
     });
 
-    xtest('for 130 days with 15% discount', () => {
+    test('for 130 days with 15% discount', () => {
       const actual = priceWithMonthlyDiscount(16, 130, 0.15);
       const expected = 14528;
       expect(actual).toBeCloseTo(expected, DIFFERENCE_PRECISION_IN_DIGITS);
     });
   });
   describe('at 29.654321/hour', () => {
-    xtest('for 220 days with 11.2%', () => {
+    test('for 220 days with 11.2%', () => {
       const actual = priceWithMonthlyDiscount(29.654321, 220, 0.112);
       const expected = 46347;
       expect(actual).toBeCloseTo(expected, DIFFERENCE_PRECISION_IN_DIGITS);
     });
 
-    xtest('for 155 days with 25.47% discount', () => {
+    test('for 155 days with 25.47% discount', () => {
       const actual = priceWithMonthlyDiscount(29.654321, 155, 0.2547);
       const expected = 27467;
       expect(actual).toBeCloseTo(expected, DIFFERENCE_PRECISION_IN_DIGITS);
