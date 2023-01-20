@@ -10,7 +10,7 @@ describe('front door response', () => {
   test('should take the first characters from SUMMER', () => {
     // Summer, by John Albert Caballero
     const SUMMER = [
-      'Sunshine warming my toes,',
+      'Sunshine warming my toes,', 
       'Underwater fun with my friends.',
       'Making homemade ice cream on the porch,',
       'Many long nights catching fireflies.',
