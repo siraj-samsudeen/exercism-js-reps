@@ -1,4 +1,4 @@
-// @ts-check
+// @ts-nocheck
 
 import { frontDoorResponse, backDoorResponse, frontDoorPassword, backDoorPassword } from './door-policy';
 
@@ -22,7 +22,7 @@ describe('front door response', () => {
     expect(recite(SUMMER, frontDoorResponse)).toStrictEqual(expectedLetters);
   });
 
-  xtest('should take the first characters from SOPHIA', () => {
+  test('should take the first characters from SOPHIA', () => {
     // Sophia, by John Albert Caballero
     const SOPHIA = [
       'Serene, calming quality',
@@ -37,7 +37,7 @@ describe('front door response', () => {
     expect(recite(SOPHIA, frontDoorResponse)).toStrictEqual(expectedLetters);
   });
 
-  xtest('should take the first characters from CODE', () => {
+  test('should take the first characters from CODE', () => {
     // Code Work, by Derk-Jan Karrenbeld
     const CODE_WORK = [
       'Compilers intensily bestow',
@@ -52,21 +52,21 @@ describe('front door response', () => {
 });
 
 describe('front door password', () => {
-  xtest('should capitalize SUMMER', () => {
+  test('should capitalize SUMMER', () => {
     expect(frontDoorPassword('SUMMER')).toBe('Summer');
   });
 
-  xtest('should capitalize SOPHIA', () => {
+  test('should capitalize SOPHIA', () => {
     expect(frontDoorPassword('SOPHIA')).toBe('Sophia');
   });
 
-  xtest('should capitalize CODE', () => {
+  test('should capitalize CODE', () => {
     expect(frontDoorPassword('CODE')).toBe('Code');
   });
 });
 
 describe('back door response', () => {
-  xtest('should take the last letter character of each line of CODE_WORK', () => {
+  test('should take the last letter character of each line of CODE_WORK', () => {
     // Code Work, by Derk-Jan Karrenbeld
     const CODE_WORK = [
       'Compilers intensily bestow',
@@ -80,7 +80,7 @@ describe('back door response', () => {
     expect(actualLetters).toStrictEqual(expectedLetters);
   });
 
-  xtest('should ignore whitespace when taking the last letter character of each line of SHIRE_HORSE_WITH_SPACES', () => {
+  test('should ignore whitespace when taking the last letter character of each line of SHIRE_HORSE_WITH_SPACES', () => {
     // Shire Horse, by Michael Lockwood
     // with trailing whitespace
     const SHIRE_HORSE_WITH_SPACES = [
