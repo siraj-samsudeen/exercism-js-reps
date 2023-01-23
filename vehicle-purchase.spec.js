@@ -42,19 +42,19 @@ describe('calculateResellPrice', () => {
     expect(calculateResellPrice(40000, 2.5)).toBe(32000);
   });
 
-  xtest('price is reduced to 50% for age above 10', () => {
+  test('price is reduced to 50% for age above 10', () => {
     expect(calculateResellPrice(40000, 12)).toBe(20000);
   });
 
-  xtest('price is reduced to 70% for between 3 and 10', () => {
+  test('price is reduced to 70% for between 3 and 10', () => {
     expect(calculateResellPrice(25000, 7)).toBe(17500);
   });
 
-  xtest('works correctly for threshold age 3', () => {
+  test('works correctly for threshold age 3', () => {
     expect(calculateResellPrice(40000, 3)).toBe(28000);
   });
 
-  xtest('works correctly for threshold age 10', () => {
+  test('works correctly for threshold age 10', () => {
     expect(calculateResellPrice(25000, 10)).toBe(17500);
   });
 });
