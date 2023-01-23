@@ -8,14 +8,14 @@ import {
 } from './high-score-board';
 
 describe('createScoreBoard', () => {
-  xtest('creates a new board with a test entry', () => {
+  test('creates a new board with a test entry', () => {
     const expected = { 'The Best Ever': 1000000 };
     expect(createScoreBoard()).toEqual(expected);
   });
 });
 
 describe('addPlayer', () => {
-  xtest('adds a player and score to the board', () => {
+  test('adds a player and score to the board', () => {
     const scoreBoard = {
       'Amil Pastorius': 99373,
       'Min-seo Shin': 0,
@@ -31,7 +31,7 @@ describe('addPlayer', () => {
     expect(actual).toEqual(expected);
   });
 
-  xtest('returns the existing score board', () => {
+  test('returns the existing score board', () => {
     const scoreBoard = {};
     const actual = addPlayer(scoreBoard, 'Jesse Johnson', 1337);
 
@@ -42,7 +42,7 @@ describe('addPlayer', () => {
 });
 
 describe('removePlayer', () => {
-  xtest('removes a player from the score board', () => {
+  test('removes a player from the score board', () => {
     const scoreBoard = {
       'Amil Pastorius': 99373,
       'Min-seo Shin': 0,
@@ -61,7 +61,7 @@ describe('removePlayer', () => {
     expect(Object.is(actual, scoreBoard)).toBe(true);
   });
 
-  xtest('does nothing if the player is not on the board', () => {
+  test('does nothing if the player is not on the board', () => {
     const scoreBoard = {
       'Amil Pastorius': 99373,
       'Min-seo Shin': 0,
@@ -100,7 +100,7 @@ describe('updateScore', () => {
 });
 
 describe('applyMondayBonus', () => {
-  xtest('adds 100 points for all players', () => {
+  test('adds 100 points for all players', () => {
     const scoreBoard = {
       'Amil Pastorius': 345,
       'Min-seo Shin': 19,
@@ -120,7 +120,7 @@ describe('applyMondayBonus', () => {
     expect(Object.is(actual, scoreBoard)).toBe(true);
   });
 
-  xtest('does nothing if the score board is empty', () => {
+  test('does nothing if the score board is empty', () => {
     const scoreBoard = {};
     const actual = applyMondayBonus(scoreBoard);
     expect(actual).toEqual({});
@@ -131,7 +131,7 @@ describe('applyMondayBonus', () => {
 });
 
 describe('normalizeScore', () => {
-  xtest('applies the normalization function', () => {
+  test('applies the normalization function', () => {
     const params = {
       score: 45,
       normalizeFunction: function (score) {
@@ -142,7 +142,7 @@ describe('normalizeScore', () => {
     expect(normalizeScore(params)).toEqual(125);
   });
 
-  xtest('works for different params', () => {
+  test('works for different params', () => {
     const params = {
       score: 2100,
       normalizeFunction: function (score) {
