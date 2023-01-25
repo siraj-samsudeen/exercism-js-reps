@@ -9,6 +9,7 @@ export const scale2d = (sx, sy) => {
     return [sx * x, sy * y];
   };
 };
+ś;
 
 export const composeTransform = (f, g) => {
   return (x, y) => {
